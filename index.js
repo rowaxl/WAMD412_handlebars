@@ -10,7 +10,12 @@ app.use(express.static(path.join(__dirname,'public')));
 // app.set('view engine', 'ejs');
 // app.set('views', path.join(__dirname,'/views'));
 
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs({
+    extname: 'handlebars',
+    defaultLayout: 'main',
+    layoutsDir: __dirname + '/views-hbs/layouts',
+    partialsDir: __dirname + '/views-hbs/partials',
+}));
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname,'/views-hbs'));
 

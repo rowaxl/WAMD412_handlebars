@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Browsing The {{name}} subreddit</h1>
+    <h2>{{description}}</h2>
+    <p>{{subscribers}} total subscribers</p>
+    <hr />
+
+    {{#each posts}}
+        <article>
+            <p>{{this.title}} - {{this.author}}</p>
+            {{#if this.img}}
+                <img src={{this.img}} alt="" />
+            {{/if}}
+        </article>
+    {{/each}}
+</div>
